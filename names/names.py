@@ -21,6 +21,38 @@ duplicates = []  # Return the list of duplicates in this data structure
 #             duplicates.append(name_1)
 
 # Create a tree node
+class TreeNode:
+    def __init__(self, value)
+    self.value = value
+    self.left = None
+    self.right = None
+
+    def insert(self, value):
+        if value < self.value:
+            if self.left is None:
+                self.left = TreeNode(value)
+            else:
+                self.left.insert(value)
+        elif value >= self.value:
+            if self.right is None:
+                self.right = TreeNode(value)
+            else:
+                self.right.insert(value)
+    
+    def contains(self, target):
+        if self.value == target:
+            self.duplicates.append(target)
+            return True
+        elif target < self.value:
+            if self.left is None:
+                return False
+            else:
+                return self.left.contains(target)
+        else:
+            if self.right is None:
+                return False
+            else:
+                return self.right.contains(target)
 
 # create a binary search tree with one of the lists
 
