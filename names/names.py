@@ -41,7 +41,6 @@ class TreeNode:
     
     def contains(self, target):
         if self.value == target:
-            self.duplicates.append(target)
             return True
         elif target < self.value:
             if self.left is None:
@@ -61,7 +60,8 @@ nameTree = TreeNode(names_1[0])
 for n in names_1:
     nameTree.insert(n)
 for check in names_2:
-    nameTree.contains(check)
+    if nameTree.contains(check):
+        duplicates.append(check)
 
 
 # check if the value of one of the other list names matches a item in the tree if so then push it into the dupes
